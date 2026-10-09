@@ -11,7 +11,7 @@ class TarefaController extends Controller
      */
     public function index()
     {
-        return 'Não, não, não! Beber xixir? <img src="https://media.giphy.com/media/4ts77695IRJrp0wRUy/giphy.gif" alt="Não, não, não! Beber xixir?" />';
+        return '<img src="https://media.giphy.com/media/4ts77695IRJrp0wRUy/giphy.gif" alt="gif bem legal" />';
     }
 
     /**
@@ -27,7 +27,7 @@ class TarefaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);        
     }
 
     /**
