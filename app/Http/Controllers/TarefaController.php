@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TarefaRequest;
+use App\Models\Tarefa;
 use Illuminate\Http\Request;
 
 class TarefaController extends Controller
@@ -11,7 +13,7 @@ class TarefaController extends Controller
      */
     public function index()
     {
-        return '<img src="https://media.giphy.com/media/4ts77695IRJrp0wRUy/giphy.gif" alt="gif bem legal" />';
+        return response()->json(Tarefa::all());
     }
 
     /**
@@ -25,9 +27,10 @@ class TarefaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(TarefaRequest $request)
     {
-        dd($request);        
+        $tarefa = Tarefa::create($request->all()); 
+        return response()->json($tarefa, 201);      
     }
 
     /**
